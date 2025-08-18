@@ -12,7 +12,11 @@ export async function GET(
     const models = await prisma.models.findUnique({
       where: { id: (await params).id },
       include:{
-        series: true
+        series: {
+          include: {
+            brand: true,
+          }
+        }
       }
     });
 

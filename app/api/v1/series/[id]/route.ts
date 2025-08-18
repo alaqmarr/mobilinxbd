@@ -11,6 +11,10 @@ export async function GET(
   try {
     const series = await prisma.series.findUnique({
       where: { id: (await params).id },
+      include: {
+        models: true,
+        brand: true,
+      },
     });
 
     if (!series) {

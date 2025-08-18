@@ -12,6 +12,10 @@ export async function GET(request: Request) {
     const series = await prisma.series.findMany({
       where: brandId ? { brandId } : {},
       orderBy: { createdAt: 'desc' },
+      include: {
+        models: true,
+        brand: true,
+      },
     });
 
     return NextResponse.json(series);

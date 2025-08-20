@@ -77,7 +77,7 @@ export function ImageUpload({ value, onChange, disabled }: ImageUploadProps) {
           <img
             src={value}
             alt="Uploaded"
-            className="w-full h-48 object-cover rounded-lg"
+            className="w-48 h-48 object-cover rounded-lg"
           />
           <Button
             type="button"
@@ -116,7 +116,7 @@ export function ImageUpload({ value, onChange, disabled }: ImageUploadProps) {
       </div>
 
       {uploading && (
-        <div className="w-full bg-gray-200 rounded-full h-2 mt-2">
+        <div className="w-48 bg-gray-200 rounded-full h-2 mt-2">
           <div
             className="bg-blue-600 h-2 rounded-full transition-all duration-200"
             style={{ width: `${progress}%` }}
